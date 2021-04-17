@@ -40,10 +40,14 @@ module HeadingsHelper
     headings_list.each_with_index do |element, index|
       strings_array[index] = ""
       depth = element[:heading_level]
+      tabs = ""
+      numbers = ""
       (depth + 1).times do |time|
+        tabs += "&nbsp"
         item_value = counters[time].shift
-        strings_array[index] += item_value.to_s + '.'
+        numbers += item_value.to_s + '.'
       end
+      strings_array[index] += tabs + numbers + " " + element[:title].capitalize
     end
 
     strings_array

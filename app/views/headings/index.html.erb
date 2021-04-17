@@ -1,1 +1,3 @@
-<%= @headings %>
+<% @headings.each do |e| %>
+  <p><%= raw e %></p>
+<% end %>
